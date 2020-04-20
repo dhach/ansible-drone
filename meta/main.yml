@@ -1,6 +1,8 @@
+---
+
 galaxy_info:
   role_name: drone
-  author: Bo-Yi Wu <appleboy.tw@gmail.com>
+  author: dhach
   description: Ansible role to configure drone (server and agent)
   license: MIT
 
@@ -21,6 +23,3 @@ galaxy_info:
     - ci
     - droneci
     - devops
-
-dependencies:
-  - { role: geerlingguy.docker }

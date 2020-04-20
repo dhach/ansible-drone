@@ -4,7 +4,7 @@
     msg: "Variable '{{ item }}' is not defined for drone server setup"
   when: item not in vars and drone_database_driver != "sqlite"
   with_items:
-     - drone_database_datasource
+    - drone_database_datasource
   tags:
     - configuration
 
@@ -13,9 +13,9 @@
     msg: "Variable '{{ item }}' is not defined for drone server setup"
   when: item not in vars
   with_items:
-     - drone_server_host
-     - drone_server_proto
-     - drone_rpc_secret
+    - drone_server_host
+    - drone_server_proto
+    - drone_rpc_secret
   tags:
     - configuration
 

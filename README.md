@@ -1,13 +1,6 @@
 # Ansible Role: drone
 
-<img src="images/logo.png">
-
-This role will install drone [agents][1] + [server][2] using [docker](https://www.docker.com/)
-
-[![Build Status](https://cloud.drone.io/api/badges/appleboy/ansible-drone/status.svg)](https://cloud.drone.io/appleboy/ansible-drone)
-
-[1]:https://docs.drone.io/administration/agents/
-[2]:https://docs.drone.io/administration/server/
+**NOTE**: This is my personal fork of [Appleboy's Drone role](https://github.com/appleboy/ansible-drone). I use it to improve upon the original role and then, eventually, issue a pull request.
 
 ## Requirements
 
@@ -19,7 +12,7 @@ Change the `drone_host_port` for expose port if conflict and update the `drone_v
 
 ```yml
 drone_version: "latest"
-drone_host_port: "8080"
+drone_host_port: "127.0.0.1:8080"
 ```
 
 Install the drone server or agent via the following config. Default is `false`.
@@ -29,10 +22,11 @@ drone_server_enable: "false"
 drone_agent_enable: "false"
 ```
 
-Default database is `sqlite` and drone can be installed with `mysql` or `postgres` database. See the followings. 
+Default database is `sqlite` and drone can be installed with `mysql` or `postgres` database. See the following:
 
 ```yml
 drone_database_driver: "postgres"
+drone_postgres_docker_portmapping: "127.0.0.1:5432"
 drone_postgres_data_dir: "/var/lib/postgresql/data"
 drone_postgres_password: "drone"
 drone_postgres_user: "drone"
@@ -43,6 +37,7 @@ mysql database (5.7 version)
 
 ```yml
 drone_database_driver: "mysql"
+drone_mysql_docker_portmapping: "127.0.0.1:3306"
 drone_mysql_data_dir: "/var/lib/mysql/data"
 drone_mysql_password: "drone"
 drone_mysql_user: "drone"
@@ -55,7 +50,7 @@ The ansible role offers additional parameters - please check `defaults/main.yml`
 
 ## Example Playbook
 
-import the drone role from 
+import the drone role from Ansible Galaxy
 
 ```bash
 $ ansible-galaxy install appleboy.drone

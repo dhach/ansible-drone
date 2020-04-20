@@ -1,3 +1,5 @@
+---
+
 # server setting
 drone_server_enable: "false"
 drone_agent_enable: "false"
@@ -8,7 +10,7 @@ drone_logs_color: "true"
 drone_server_host: "http://localhost:8080"
 drone_rpc_server: "http://drone-server"
 drone_runner_capacity: "3"
-drone_host_port: "8080"
+drone_host_port: "127.0.0.1:8080"
 
 # github setting
 drone_github_server: "https://github.com"
@@ -39,10 +41,12 @@ drone_bitbucket_skip_verify: "false"
 # database setting
 drone_database_driver: "sqlite"
 drone_sqlite_dir: "/var/lib/drone"
+drone_postgres_docker_portmapping: "127.0.0.1:5432"
 drone_postgres_data_dir: "/var/lib/postgresql/data"
 drone_postgres_password: "drone"
 drone_postgres_user: "drone"
 drone_postgres_db: "drone"
+drone_mysql_docker_portmapping: "127.0.0.1:3306"
 drone_mysql_data_dir: "/var/lib/mysql/data"
 drone_mysql_password: "drone"
 drone_mysql_user: "drone"
@@ -56,7 +60,7 @@ aws_access_key_id: ""
 aws_secret_access_key: ""
 
 # Kubernetes
-drone_kubernetes_enabled: False
+drone_kubernetes_enabled: false
 drone_kubernetes_namespace: ""
 drone_kubernetes_config_path: ""
 drone_kubernetes_config_url: ""

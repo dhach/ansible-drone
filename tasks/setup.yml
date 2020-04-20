@@ -4,7 +4,7 @@
     msg: "Variable '{{ item }}' is not defined for drone general setup"
   when: item not in vars
   with_items:
-     - drone_rpc_secret
+    - drone_rpc_secret
   tags:
     - configuration
 
