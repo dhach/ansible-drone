@@ -33,12 +33,12 @@ scenario:
   test_sequence:
     - dependency
     - lint
-    - destroy
+    # - destroy
     - syntax
-    - create
-    - prepare
-    - converge
-    - verify
+    # - create
+    # - prepare
+    # - converge
+    # - verify
     - destroy
 
 verifier:
